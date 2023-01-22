@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %} - Portafolio</title>
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Rubik:wght@400;700&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+    <!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <header>
+        <div class="logo">Alejandro Elizárraga</div>
+        <nav>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="#about">Acerca de mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- CONTENT -->
+    <section>{% block content %} {% endblock %}</section>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="center full-width">
+            <div class="row">
+                <h3>Contáctame</h3>
+            </div>
+        </div>
+        <div class="center full-width">
+            <div class="row">
+                <p>Tambien puedes seguirme en LK</p>
+            </div>
+        </div>
+        <div class="center full-width social-links">
+            <div class="row">
+                <a  target='_blank' href="https://www.linkedin.com/in/jos%C3%A9-alejandro-garc%C3%ADa-elizarraga/"><img class="social"width=30 src="{% static 'img/linkedin.png'%}"></a>
+                <a  target='_blank' href="https://github.com/AlejandroElizarraga"><img class="social"width=30 src="{% static 'img/GitHub.png'%}"></a>
+            </div>
+        </div>
+        <div class="made-width">
+            <div class="row">
+                <p>Hecho con mucho entusiasmo ✌️ por Alejandro Elizárraga</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
