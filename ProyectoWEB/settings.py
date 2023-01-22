@@ -46,13 +46,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'ProyectoWEB.urls'
@@ -74,7 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ProyectoWEB.wsgi.application'
-
+WHITENOISE_USE_FINDERS = True
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -124,12 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static') ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
